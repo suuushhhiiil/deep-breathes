@@ -59,8 +59,14 @@
   background-color: var(--primary);
   animation: rise-up-delayed 1s ease forwards;
 }
-.features{
+.featues{
   background-image: url(../assets/featuresBackground.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+}
+.aboutUsImage{
+  background-image: url(../assets/hero-background.jpg);
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }

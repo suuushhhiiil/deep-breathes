@@ -6,6 +6,11 @@ import mayaImage from '../assets/Maya.png';
 import arjunImage from '../assets/Arjun.png';
 import samayImage from '../assets/Samay.png';
 import priyaImage from '../assets/Priya.png';
+import mentalHealthTips from '../assets/mental-health-tips.jpg';
+import guidedExercises from '../assets/guided-exercises.jpg';
+import storiesThatInspire from '../assets/stories-that-inspire.jpg';
+import professionalSupport from '../assets/professional-support.jpg';
+
 
 
 export const features = [
@@ -13,21 +18,25 @@ export const features = [
     title: "Mental Health Tips",
     description:
       "Explore quick and easy-to-follow tips to handle everyday stress, build resilience, and improve your mental well-being.",
-  },
-  {
-    title: "Guided Exercises",
-    description:
+      image: mentalHealthTips
+    },
+    {
+      title: "Guided Exercises",
+      description:
       "Follow step-by-step breathing techniques, mindfulness activities, and relaxation exercises tailored to your busy schedule.",
-  },
-  {
-    title: "Stories That Inspire",
-    description:
+      image: guidedExercises
+    },
+    {
+      title: "Stories That Inspire",
+      description:
       "Real-life experiences from students and young adults who’ve faced mental health challenges and emerged stronger. Discover hope and strength through shared journeys.",
-  },
-  {
-    title: "Professional Support",
-    description:
+      image: storiesThatInspire
+    },
+    {
+      title: "Professional Support",
+      description:
       "Access a network of trusted counselors and therapists ready to help you navigate difficult times. We’ve vetted professionals who understand the unique challenges faced by young adults.",
+      image: professionalSupport
   },
 ];
 export const testimonials = [
