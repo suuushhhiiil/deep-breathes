@@ -23,4 +23,4 @@ const UtterYourThoughts = () => {
   )
 }
 
-export default UtterYourThoughts
+export default UtterYourThoughts;
