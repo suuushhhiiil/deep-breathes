@@ -59,7 +59,7 @@
   background-color: var(--primary);
   animation: rise-up-delayed 1s ease forwards;
 }
-.featues{
+.featurres{
   background-image: url(../assets/featuresBackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;

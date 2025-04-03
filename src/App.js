@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
+import AboutMe from "./components/AboutMe";
 import Lenis from "lenis";
 import { useEffect } from "react";
 import UtterYourThoughts from "./components/UtterYourThoughts";
@@ -25,7 +25,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutMe />} />
           <Route path="/utter-your-thoughts" element={<UtterYourThoughts />} />
         </Routes>
       </BrowserRouter>
