@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const UtterYourThoughts = () => {
   const [animateDiv, setAnimateDiv] = useState(false);
   const [thought, setThought] = useState('');
-  var message = "";
+  const [message, setMessage] = useState('');
 
   useEffect(()=>{
 
@@ -11,13 +11,7 @@ const UtterYourThoughts = () => {
 
   const readThought = () => {
     setAnimateDiv(!animateDiv);
-    if (message.trim() != '') {
-      setThought(message);
-    }
-    else {
-      setThought(message);
-      message = 0;
-    }
+    setThought(message.trim() !== '' ? message : '');
   };
   return (
     <>
@@ -40,7 +34,7 @@ const UtterYourThoughts = () => {
               className='rounded-full px-6 py-3 w-[40%] text-[20px] text-secondary font-sans font-light bg-accent'
               placeholder={'Write here, whatever is bothering you!'
               }
-              onChange={(e) => { message = e.target.value }}
+              onChange={(e) => setMessage(e.target.value) }
             />
             <button onClick={readThought} className='ml-4 bg-secondary font-sans text-[16px] text-white rounded-full py-3 px-6'>
               Let it go!

@@ -12,13 +12,18 @@ const App = () => {
     const lenis = new Lenis({
       duration: 1.9,
     });
-    function raf(time) {
+    let animationFrameId;
+    const raf = (time) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrameId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
-  });
+    animationFrameId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    }
+  }, []);
   return (
     <>
       <BrowserRouter>
