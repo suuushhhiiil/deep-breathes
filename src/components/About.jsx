@@ -17,7 +17,7 @@ const About = () => {
             scale: 0.8,
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "0% top",
+                start: "10% top",
                 end: "top -150%",
                 scrub: 1,
                 markers: true
