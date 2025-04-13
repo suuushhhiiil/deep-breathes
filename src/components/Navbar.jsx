@@ -33,7 +33,7 @@ function Navbar() {
               {
                 Links.map((items) => {
                   return(
-                  <li key={items.name} className=''><Link to={items.link} className={`text-[1.2em] font-sans px-[14px] rounded-full font-medium ${location.pathname === items.link ? 'active-link' : 'inactive-link'}`}>{items.name}</Link></li>
+                  <li key={items.name} className=''><Link to={items.link} className={`text-[1.2em] font-sans px-[14px] rounded-full font-light ${location.pathname === items.link ? 'active-link' : 'inactive-link'}`}>{items.name}</Link></li>
                 )})
               }
             </ul>

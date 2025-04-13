@@ -13,14 +13,13 @@ const About = () => {
         let aboutUsWelcome = gsap.utils.toArray(".aboutUsWelcome");
 
         gsap.to(aboutUs, {
-            transform: 'perspective(1500px) rotateX(-55deg) translateY(-70%)',
+            transform: 'perspective(1500px) rotateX(0deg) translateY(-30%)',
             scale: 0.8,
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "10% top",
+                start: "20% top",
                 end: "top -150%",
                 scrub: 1,
-                markers: true
             },
         });
 

@@ -26,12 +26,12 @@ const Home = () => {
             <div className="flex flex-col ml-[100px] space-y-2 w-[50rem]">
               <h1
                 id="heading"
-                className={`font-display text-[5rem] leading-[0.9] text-secondary`}
+                className={`font-display font-bold text-[4.8rem] leading-[0.9] text-secondary`}
               >
                 Pause. Breathe. Heal.
               </h1>
               <p
-                className={`text-justify font-sans text-[1rem] p-[10px]`}
+                className={`text-justify font-sans font-light text-[1rem] p-[10px]`}
               >
                 Your safe space for mental wellness, growth, and balance. At
                 Deep Breathes, we’re here to support you through life’s
