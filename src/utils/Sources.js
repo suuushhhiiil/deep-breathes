@@ -15,30 +15,34 @@ import professionalSupport from '../assets/professional-support.jpg';
 
 export const features = [
   {
+    id: 0,
     title: "Mental Health Tips",
     description:
-      "Explore quick and easy-to-follow tips to handle everyday stress, build resilience, and improve your mental well-being.",
-      image: mentalHealthTips
-    },
-    {
+    "Explore quick and easy-to-follow tips to handle everyday stress, build resilience, and improve your mental well-being.",
+    image: mentalHealthTips
+  },
+  {
+      id: 1,
       title: "Guided Exercises",
       description:
       "Follow step-by-step breathing techniques, mindfulness activities, and relaxation exercises tailored to your busy schedule.",
       image: guidedExercises
     },
     {
+      id: 2,
       title: "Stories That Inspire",
       description:
       "Real-life experiences from students and young adults who’ve faced mental health challenges and emerged stronger. Discover hope and strength through shared journeys.",
       image: storiesThatInspire
     },
     {
+      id: 3,
       title: "Professional Support",
       description:
       "Access a network of trusted counselors and therapists ready to help you navigate difficult times. We’ve vetted professionals who understand the unique challenges faced by young adults.",
       image: professionalSupport
-  },
-];
+    },
+  ];
 export const testimonials = [
   {
     statement : "I’ve struggled with anxiety for years, but Deep Breathes gave me tools I could actually use. The breathing exercises are simple yet so effective!",

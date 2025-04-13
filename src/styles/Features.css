@@ -41,7 +41,7 @@ left: calc(50% - 8rem);
 }
 
 .flip-card-back {
-    padding:50px;
+    padding:20px;
     transform: rotateY(180deg);
 }
 

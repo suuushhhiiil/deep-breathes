@@ -26,16 +26,19 @@ const Features = () => {
     const positions = [10, 30, 50, 70];
     const rotations = [-15, -7.5, 7.5, 15];
 
-    // Pin cards
-    ScrollTrigger.create({
-      trigger: featuresEl,
-      start: "top top",
-      end: () => `+=${totalScrollHeight}`,
-      pin: true,
-      pinSpacing: true,
-    });
+    // Store references to triggers so we can kill them later
 
-    // Spread Cards
+    // Pin cards
+
+        ScrollTrigger.create({
+        trigger: featuresEl,
+        start: "top top",
+        end: `+=${totalScrollHeight}`,
+        pin: true,
+        pinSpacing: true,
+      });
+
+    // Spread cards
     cards.forEach((card, index) => {
       gsap.to(card, {
         left: `${positions[index]}%`,
@@ -44,18 +47,18 @@ const Features = () => {
         scrollTrigger: {
           trigger: featuresEl,
           start: "top top",
-          end: () => `+=${totalScrollHeight / 3}`,
+          end: `+=${totalScrollHeight / 3}`,
           scrub: 0.5,
           id: `spread-${index}`,
         },
-      });
+      })
     });
 
-    // Flip Cards and reset rotation
+    // Flip cards
     ScrollTrigger.create({
       trigger: featuresEl,
       start: "top top",
-      end: () => `+=${totalScrollHeight}`,
+      end: `+=${totalScrollHeight}`,
       scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
@@ -76,10 +79,6 @@ const Features = () => {
         });
       },
     });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
   }, []);
   return (
     <div
@@ -95,8 +94,9 @@ const Features = () => {
       {features.map((feature, index) => (
         <div
           ref={(el) => (cardRefs.current[index] = el)}
-          key={index}
-          className="card relative w-[350px] h-[500px]"
+          key={feature.id}
+          className="card relative  min-w-[19vw] h-[400px]"
+          id={`card-${index + 1}`}
         >
           <div className="card-wrapper">
             <div className="flip-card-inner">
@@ -111,7 +111,7 @@ const Features = () => {
               <div ref={(el) => (backElRefs.current[index] = el)}
                 className="flip-card-back flex flex-col bg-accent detail space-y-2 ">
                 <h1 className="font-semibold text-[1.2rem] text-nowrap">{feature.title}</h1>
-                <p className="text-justify text-[1rem]">{feature.description}</p>
+                <p className="text-[1rem]">{feature.description}</p>
               </div>
             </div>
           </div>

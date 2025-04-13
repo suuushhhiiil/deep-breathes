@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import "../styles/About.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,14 +13,13 @@ const About = () => {
         let aboutUsWelcome = gsap.utils.toArray(".aboutUsWelcome");
 
         gsap.to(aboutUs, {
-            opacity: 0,
+            transform: 'perspective(1500px) rotateX(-55deg) translateY(-70%)',
             scale: 0.8,
-            y: "-50%",
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "35% top",
-                end: "top -250%",
-                scrub: 0.2,
+                start: "0% top",
+                end: "top -150%",
+                scrub: 1,
                 markers: true
             },
         });
@@ -81,7 +81,7 @@ const About = () => {
         }
     }, [])
     return (
-        <div className="aboutUs flex justify-center items-ce top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[105vh]">
+        <div className="aboutUs flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[125vh]">
             <div className="px-[15rem]">
                 <p className="aboutUsWelcome font-sans text-secondary">Welcome to Deep Breathes</p>
                 <div className="content w-fit justify-between flex mt-[8px]">

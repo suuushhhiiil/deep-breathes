@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Features from "./Features";
 import About from "./About";
 import Testimonials from "./Testimonials";
-
+import Offerings from "./Offerings";
 
 const Home = () => {
   const buttonStyle = `transition-color duration-400 text-lg font-sans rounded-full px-8 py-3 font-medium`;
@@ -56,9 +56,10 @@ const Home = () => {
         </div>
       </div>
       <About />
+      <Offerings />
       <Testimonials />
       <div className="footer h-40px w-full bg-accent">
-        dfsf
+        
       </div>
     </>
   );
