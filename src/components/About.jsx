@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import "../styles/About.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,73 +6,61 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+
+    const aboutUsRef = useRef(null);
+    const aboutUsHeadingRef = useRef(null);
+    const aboutUsContentRef = useRef(null);
+    const aboutUsWelcomeRef = useRef(null);
+    const aboutUsImageRef = useRef(null);
     useEffect(() => {
-        let aboutUs = gsap.utils.toArray(".aboutUs");
-        let aboutUsHeading = gsap.utils.toArray(".aboutUsHeading");
-        let aboutUsContent = gsap.utils.toArray(".aboutUsContent");
-        let aboutUsWelcome = gsap.utils.toArray(".aboutUsWelcome");
+        let aboutUs = aboutUsRef.current;
+        let aboutUsHeading = aboutUsHeadingRef.current;
+        let aboutUsContent = aboutUsContentRef.current;
+        let aboutUsWelcome = aboutUsWelcomeRef.current;
+        let aboutUsImage = aboutUsImageRef.current;
 
         gsap.to(aboutUs, {
-            transform: 'perspective(1500px) rotateX(0deg) translateY(-30%)',
+            transform: 'perspective(1500px) rotateX(-50deg) translateY(-60%)',
             scale: 0.8,
+            opacity: 0,
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "20% top",
-                end: "top -150%",
+                start: "25% top",
+                end: "top -100%",
                 scrub: 1,
             },
         });
 
-        gsap.fromTo(aboutUsHeading,
-            {
-                y: 100,
-                opacity: 0
-            },
-            {
-                delay: 2,
-                opacity: 1,
-                y: 0,
-                scrollTrigger: {
-                    trigger: aboutUs,
-                    start: "top 45%",
-                    end: "top 10%",
-                    scrub: 0.5,
-                },
-            });
-
-        gsap.fromTo(aboutUsContent,
-            {
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                delay: 4,
-                duration: 3,
-                y: 0,
-                scrollTrigger: {
-                    trigger: aboutUs,
-                    start: "top 55%",
-                    end: "top top",
-                    scrub: true,
-                },
-            });
-
-        gsap.fromTo(aboutUsWelcome,
-            {
-                y: 200,
-                opacity: 0
-            },
-            {
-                opacity: 1,
-                delay: 4,
-                y: 0,
-                scrollTrigger: {
-                    trigger: aboutUs,
-                    start: "top 65%",
-                    end: "top 25%",
-                    scrub: 1,
-                },
-            });
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: aboutUs,
+                start: "20% 60%",
+                end: "top top",
+                toggleActions: "play play play reverse",
+                markers: true,
+            }
+        })
+        
+        tl.fromTo(aboutUsWelcome,
+            { y: 200, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5 },
+            "+=0.5"
+        );
+        tl.fromTo(aboutUsHeading,
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8 },
+            "-=0.3"
+        );
+        tl.fromTo(aboutUsContent,
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.5 },
+            "-=0.3"
+        );
+        tl.fromTo(aboutUsImage,
+            { y:300, opacity: 0 },
+            { y:0, opacity: 1, scale: 1, duration: 0.8, },
+            "-=0.8"
+        );
     });
     useEffect(() => {
         return () => {
@@ -80,15 +68,15 @@ const About = () => {
         }
     }, [])
     return (
-        <div className="aboutUs flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[125vh]">
+        <div className="aboutUs sticky flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[110vh]" ref={aboutUsRef}>
             <div className="px-[15rem]">
-                <p className="aboutUsWelcome font-sans text-secondary">Welcome to Deep Breathes</p>
+                <p className="aboutUsWelcome font-sans text-secondary" ref={aboutUsWelcomeRef}>Welcome to Deep Breathes</p>
                 <div className="content w-fit justify-between flex mt-[8px]">
-                    <h1 className="aboutUsHeading font-display font-semibold text-[4rem] leading-[1] flex-shrink-0 w-[25rem]">
+                    <h1 className="aboutUsHeading font-display font-semibold text-[4rem] leading-[1] flex-shrink-0 w-[25rem]" ref={aboutUsHeadingRef}>
                         Who We Are?
                     </h1>
                     <div className="font-sans pl-[40px] text-justify w-[47vw]">
-                        <p className="aboutUsContent">
+                        <p className="aboutUsContent" ref={aboutUsContentRef}>
                             Deep Breathes is a supportive platform for students and young
                             adults, making mental wellness approachable and actionable.
                             "We’re committed to creating a safe space where everyone feels
@@ -97,7 +85,7 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-                <div className="aboutUsImage w-full h-[50vh] mt-[60px] rounded-[30px]"></div>
+                <div className="aboutUsImage w-full h-[50vh] mt-[60px] rounded-[30px]" ref={aboutUsImageRef}></div>
             </div>
         </div>
     )

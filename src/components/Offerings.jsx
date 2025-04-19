@@ -1,31 +1,47 @@
-import React, { useEffect } from 'react'
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react'
+import "../styles/Offerings.css"; import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Offerings = () => {
-  useEffect(() => {
-    let aboutUs = gsap.utils.toArray(".aboutUs");
-    let aboutUsHeading = gsap.utils.toArray(".aboutUsHeading");
-    let aboutUsContent = gsap.utils.toArray(".aboutUsContent");
-    let aboutUsWelcome = gsap.utils.toArray(".aboutUsWelcome");
 
-    gsap.to(aboutUs, {
-      transform: 'perspective(1500px) rotateX(-55deg) translateY(-70%)',
-      scale: 0.8,
-      scrollTrigger: {
-        trigger: aboutUs,
-        start: "10% top",
-        end: "top -150%",
-        scrub: 1,
-        markers: true
+  const offeringContainerRef = useRef(null);
+  const offeringElementsRef = useRef([]);
+
+  useEffect(() => {
+    const totalScrollHeight = window.innerHeight * 3;
+    const elements = offeringElementsRef.current;
+    const container = offeringContainerRef.current;
+    gsap.fromTo(
+      container,
+      {
+        transform: "perspective(1500px) rotateX(15deg) translateY(-40%)",
       },
-    });
-  }, [])
+      {
+        transform: "perspective(1500px) rotateX(0deg)",
+        scale: 1,
+        scrollTrigger: {
+          trigger: container,
+          start: "top 130%",
+          end: "top 80%",
+          scrub: 1,
+          markers: true,
+        }
+      }
+    );
+  }, []);
+
   return (
-    <div className='offering sticky flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[125vh] bg-primary'>Offerings</div>
+    <div className='offering sticky flex justify-center top-[15vh] pt-[25vh] mt-[3px] pb-[30vh] font-sans h-[320vh] bg-black rounded-[20px]' ref={offeringContainerRef}>
+      <div className='font-display text-6xl font-bold text-white' ref={(el) => (offeringElementsRef.current[0] = el)}>
+        What We Offer?
+      </div>
+      <div className='font-display text-6xl font-bold text-white' ref={(el) => (offeringElementsRef.current[1] = el)}>
+        What We Offer?
+      </div>
+    </div>
   )
 }
 
-export default Offerings
+export default Offerings;

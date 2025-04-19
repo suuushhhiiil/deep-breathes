@@ -58,7 +58,7 @@ const Home = () => {
       <About />
       <Offerings />
       <Testimonials />
-      <div className="footer h-40px w-full bg-accent">
+      <div className="footer h-[280vh] w-full bg-accent">
         
       </div>
     </>

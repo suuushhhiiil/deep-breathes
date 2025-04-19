@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { testimonials } from '../utils/Sources';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../styles/Testimonials.css"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,16 +11,18 @@ const Testimonials = () => {
     useEffect(() => {
         let testCard = gsap.utils.toArray(".test-card");
         let testimonials = gsap.utils.toArray(".testimonials");
-        
+
         gsap.to(testCard, {
-            xPercent: 100,
+            x: "-450%",
             scrollTrigger: {
               trigger: testimonials,
-              start: "top 65%",
-              end: "bottom top",
-              scrub: true,
+              start: "top -20%",
+              end: "bottom 50%",
+              scrub: 1.5,
+              markers: true,
             },
           });
+
     })
     useEffect(()=> {
         return ()=> {
@@ -27,7 +30,7 @@ const Testimonials = () => {
         }
     }, [])
     return (
-        <div className="sticky px-[100px] testimonials h-[150vh] top-0 pt-[20vh] font-sans justify-center">
+        <div className="sticky px-[100px] testimonials h-[100vh] top-0 pt-[20vh] font-sans justify-center origin-bottom-center bg-primary">
             <div className="flex items-center justify-center rounded-[15px]">
                 <h2 className="font-display text-center text-[3.4rem] leading-[1.1] px-[25px] w-fit">
                     What Peaple Are Saying!
