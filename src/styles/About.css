@@ -1,4 +1,4 @@
 .aboutUs {
     transform: perspective(1500px);
-    transform-origin: bottom center;
+    transform-origin: top center;
 }

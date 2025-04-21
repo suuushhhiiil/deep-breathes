@@ -39,7 +39,6 @@ const Testimonials = () => {
             <div className="flex overflow-hidden space-x-4 p-4 mt-[30px]">
                 {testimonials.map((item, index) => (
                     <div
-                        style={{}}
                         key={index}
                         className={`test-card origin-left rounded-[15px] bg-accent  min-w-[17vw] p-[25px] shadow-lg flex flex-col justify-between min-h-[320px]`}
                     >

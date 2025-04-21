@@ -20,45 +20,44 @@ const About = () => {
         let aboutUsImage = aboutUsImageRef.current;
 
         gsap.to(aboutUs, {
-            transform: 'perspective(1500px) rotateX(-50deg) translateY(-60%)',
+            transform: 'perspective(1500px) rotateX(50deg) translateY(-40%)',
             scale: 0.8,
             opacity: 0,
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "25% top",
-                end: "top -100%",
-                scrub: 1,
+                start: "45% top",
+                end: "top -150%",
+                scrub: 0.5,
             },
         });
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "20% 60%",
+                start: "20% 70%",
                 end: "top top",
                 toggleActions: "play play play reverse",
                 markers: true,
             }
         })
-        
+
         tl.fromTo(aboutUsWelcome,
-            { y: 200, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 },
-            "+=0.5"
+            { y: 200, opacity: 0, scaleY: 1.15, },
+            { y: 0, opacity: 1, scaleY: 1, duration: 0.5 },
         );
         tl.fromTo(aboutUsHeading,
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8 },
-            "-=0.3"
+            { y: 100, opacity: 0, scaleY: 1.3, },
+            { y: 0, opacity: 1, scaleY: 1, duration: 0.8 },
+            "-=0.2"
         );
         tl.fromTo(aboutUsContent,
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.5 },
-            "-=0.3"
+            { y: 50, opacity: 0, scaleY: 1.25, },
+            { y: 0, opacity: 1, scaleY: 1, duration: 0.5 },
+            "-=0.5"
         );
         tl.fromTo(aboutUsImage,
-            { y:300, opacity: 0 },
-            { y:0, opacity: 1, scale: 1, duration: 0.8, },
+            { y: 300, opacity: 0, scaleY: 1.3, },
+            { y: 0, opacity: 1, scaleY: 1, duration: 0.7, },
             "-=0.8"
         );
     });
@@ -68,10 +67,10 @@ const About = () => {
         }
     }, [])
     return (
-        <div className="aboutUs sticky flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[110vh]" ref={aboutUsRef}>
+        <div className="aboutUs sticky flex justify-center top-0 pt-[25vh] mt-[3px] pb-[30vh] h-[180vh]" ref={aboutUsRef}>
             <div className="px-[15rem]">
                 <p className="aboutUsWelcome font-sans text-secondary" ref={aboutUsWelcomeRef}>Welcome to Deep Breathes</p>
-                <div className="content w-fit justify-between flex mt-[8px]">
+                <div className="content w-fit justify-between flex">
                     <h1 className="aboutUsHeading font-display font-semibold text-[4rem] leading-[1] flex-shrink-0 w-[25rem]" ref={aboutUsHeadingRef}>
                         Who We Are?
                     </h1>
