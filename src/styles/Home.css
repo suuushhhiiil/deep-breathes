@@ -1,9 +1,8 @@
-
 .heroImage {
   position: relative;
 }
 .heroImage::before {
-  content: '';
+  content: "";
   background-color: var(--primary);
   position: absolute;
   top: -60px;
@@ -12,34 +11,32 @@
   border-radius: 400px;
   height: 110%;
   width: 120%;
+  scale: 0.8;
   transition: 0.8s;
   animation: rise-up 16000ms ease infinite;
 }
 
 @keyframes rise-up {
   0% {
-    scale: 1;
+    scale: 0.8;
   }
   25% {
     scale: 1;
   }
   50% {
-    scale: 0.8;
+    scale: 1;
   }
   75% {
     scale: 0.8;
   }
-  100% {
-    scale: 1;
-  }
 }
 
 .imageBackdrop {
-  position : relative;
+  position: relative;
 }
 .imageBackdrop::before {
-  content: '';
-  position : absolute;
+  content: "";
+  position: absolute;
   top: 20px;
   left: 20px;
   width: 100%;
@@ -48,12 +45,12 @@
   background-color: var(--primary);
   animation: rise-up-delayed 1s ease forwards;
 }
-.featurres{
+.featurres {
   background-image: url(../assets/featuresBackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.aboutUsImage{
+.aboutUsImage {
   background-image: url(../assets/hero-background.jpg);
   background-size: cover;
   background-position: center;
