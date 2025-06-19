@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import "../styles/About.css";
+import aboutUsImg from "../assets/hero-background.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -22,7 +23,7 @@ const About = () => {
         gsap.to(aboutUs, {
             transform: 'perspective(1500px) rotateX(50deg) translateY(-40%)',
             scale: 0.8,
-            opacity: 0,
+            opacity: 0.6,
             scrollTrigger: {
                 trigger: aboutUs,
                 start: "45% top",
@@ -34,7 +35,7 @@ const About = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "20% 70%",
+                start: "20% 30%",
                 end: "top top",
                 toggleActions: "play play play reverse",
                 markers: true,
@@ -42,22 +43,22 @@ const About = () => {
         })
 
         tl.fromTo(aboutUsWelcome,
-            { y: 200, opacity: 0, scaleY: 1.15, },
-            { y: 0, opacity: 1, scaleY: 1, duration: 0.5 },
+            { y: 200, opacity: 0 },
+            { y: 0, opacity: 1 },
         );
         tl.fromTo(aboutUsHeading,
-            { y: 100, opacity: 0, scaleY: 1.3, },
-            { y: 0, opacity: 1, scaleY: 1, duration: 0.8 },
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1},
             "-=0.2"
         );
         tl.fromTo(aboutUsContent,
-            { y: 50, opacity: 0, scaleY: 1.25, },
-            { y: 0, opacity: 1, scaleY: 1, duration: 0.5 },
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1},
             "-=0.5"
         );
         tl.fromTo(aboutUsImage,
-            { y: 300, opacity: 0, scaleY: 1.3, },
-            { y: 0, opacity: 1, scaleY: 1, duration: 0.7, },
+            { y: 0, opacity:0, scale: 1.08},
+            { y: 0, opacity:1, scale: 1, duration: 0.7, },
             "-=0.8"
         );
     });
@@ -84,7 +85,9 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-                <div className="aboutUsImage w-full h-[50vh] mt-[60px] rounded-[30px]" ref={aboutUsImageRef}></div>
+                <div className="aboutUsImage w-full h-[50vh] mt-[60px] rounded-[30px] overflow-clip flex items-center" ref={aboutUsImageRef}>
+                    <img src={aboutUsImg} className="w-full" alt="" />
+                </div>
             </div>
         </div>
     )

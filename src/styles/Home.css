@@ -6,42 +6,31 @@
   content: '';
   background-color: var(--primary);
   position: absolute;
-  bottom: 0;
+  top: -60px;
   left: -30px;
   z-index: -1;
-  border-radius: 400px 400px 0 0;
+  border-radius: 400px;
   height: 110%;
   width: 120%;
   transition: 0.8s;
-  animation: rise-up-delayed 1s ease forwards;
+  animation: rise-up 16000ms ease infinite;
 }
 
-.rise-up {
-  animation: rise-up 1s ease forwards;
-}
 @keyframes rise-up {
   0% {
-    opacity: 0;
-    transform: translateY(40px);
+    scale: 1;
+  }
+  25% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.8;
+  }
+  75% {
+    scale: 0.8;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.rise-up-delayed{
-  animation: rise-up-delayed 1s ease forwards;
-}
-
-@keyframes rise-up-delayed {
-  0% {
-    opacity: 0;
-    transform: translateY(120px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+    scale: 1;
   }
 }
 

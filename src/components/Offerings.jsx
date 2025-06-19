@@ -55,7 +55,7 @@ const Offerings = () => {
 
   return (
     <>
-      <div className='offering sticky flex justify-center top-[15vh] pt-[8vh] mt-[3px] pb-[30vh] font-sans h-[60vh] bg-blak rounded-[20px]' ref={offeringContainerRef}>
+      <div className='offering sticky flex justify-center top-[15vh] pt-[8vh] mt-[3px] pb-[30vh] font-sans h-[100vh] bg-blak rounded-[20px]' ref={offeringContainerRef}>
         <div className='font-display text-6xl font-bold text-whie' ref={offeringHeadingRef}>
           What We Offer?
         </div>
