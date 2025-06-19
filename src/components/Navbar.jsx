@@ -69,13 +69,13 @@ const Navbar = () => {
                 />
               </div>
               <span>
-                <h1 className={`font-display text-8xl leading-[1] font-extrabold`}>
+                <h1 className={`font-display text-[25px] leading-[1] font-extrabold`}>
                   Deep<br />Breathes
                 </h1>
               </span>
             </div>
           </Link>
-          <div className={`menuButton h-[50px] text-5xl w-[50px] bg-primary rounded-[20px] flex flex-col items-center justify-center space-y-3 shadow-lg ${menuExpand ? `active` : `inactive`}`} onClick={handleMenu}>
+          <div className={`menuButton h-[50px] text-5xl w-[50px] bg-primary rounded-[25px] flex flex-col items-center justify-center space-y-3 shadow-lg ${menuExpand ? `active` : `inactive`}`} onClick={handleMenu}>
             <div className={`bar1 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>
             <div className={`bar2 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>
             <div className={`bar3 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>

@@ -9,8 +9,8 @@
   top: -40px;
   z-index: -1;
   border-radius: 400px;
-  height: 50vh;
-  width: 50vh;
+  height: 40vh;
+  width: 40vh;
   transition: 0.8s;
   animation: rise-up 16000ms ease infinite;
 }
@@ -20,10 +20,10 @@
     scale: 1;
   }
   25% {
-    scale: 1.08;
+    scale: 1.2;
   }
   50% {
-    scale: 1.08;
+    scale: 1.2;
   }
   75% {
     scale: 1;
