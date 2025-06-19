@@ -1,58 +1,32 @@
 .heroImage {
   position: relative;
 }
+
 .heroImage::before {
   content: "";
   background-color: var(--primary);
   position: absolute;
-  top: -60px;
-  left: -30px;
+  top: -40px;
   z-index: -1;
   border-radius: 400px;
-  height: 110%;
-  width: 120%;
-  scale: 0.8;
+  height: 50vh;
+  width: 50vh;
   transition: 0.8s;
   animation: rise-up 16000ms ease infinite;
 }
 
 @keyframes rise-up {
   0% {
-    scale: 0.8;
+    scale: 1;
   }
   25% {
-    scale: 1;
+    scale: 1.08;
   }
   50% {
-    scale: 1;
+    scale: 1.08;
   }
   75% {
-    scale: 0.8;
+    scale: 1;
   }
 }
 
-.imageBackdrop {
-  position: relative;
-}
-.imageBackdrop::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background-color: var(--primary);
-  animation: rise-up-delayed 1s ease forwards;
-}
-.featurres {
-  background-image: url(../assets/featuresBackground.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.aboutUsImage {
-  background-image: url(../assets/hero-background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}

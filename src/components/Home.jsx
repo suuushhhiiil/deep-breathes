@@ -53,11 +53,11 @@ const Home = () => {
             <div className={`lg:mt-[0px] mt-[10px] hidden lg:flex flex-col items-center shrink-0 heroImage`}>
               <img src={heroImage} className="lg:w-[45vh] w-[30vh]" alt="Calm-Lady-Breathing" loading="lazy" />
             </div>
-            <div className={`mt-[10px] lg:hidden flex flex-col items-center shrink-0 heroImage`}>
+            <div className={`mt-[50px] lg:hidden flex flex-col items-center shrink-0 heroImage`}>
               <img src={heroImage} className="w-[30vh]" alt="Calm-Lady-Breathing" loading="lazy" />
             </div>
             <div className="flex flex-col lg:ml-[100px] space-y-2 lg:w-[50rem]">
-              <h1 id="heading" className={`font-display font-bold lg:text-[4.8rem] text-[65px] leading-[0.9] text-secondary`}>
+              <h1 id="heading" className={`heroHeading font-display font-bold lg:text-[4.8rem] lg:text-left text-center text-[60px] leading-[0.9] text-secondary`}>
                 Pause. Breathe. Heal.
               </h1>
               <p className={`lg:text-justify font-sans font-light lg:text-[1.6rem] text-8xl p-[10px]`}>
