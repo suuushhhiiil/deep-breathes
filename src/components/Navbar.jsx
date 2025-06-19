@@ -2,7 +2,6 @@ import logo from '../assets/logo.png'
 import { Link, useLocation } from 'react-router-dom';
 import "../styles/Navbar.css";
 import { useState } from 'react';
-import { div } from 'framer-motion/client';
 
 
 const Navbar = () => {
@@ -57,6 +56,8 @@ const Navbar = () => {
         }
         <Link to={'/contact'} className='animate-button text-2xl rounded-full border-secondary text-secondary border-[1px] px-[2rem] py-[1vh] hover:border-primary hover:text-black'>Contact Us</Link>
       </div>
+
+
       { //Mobile-Nav-Bar
         <div className='lg:hidden flex justify-between items-center px-[20px]'>
           <Link to={'/'} className=''>
