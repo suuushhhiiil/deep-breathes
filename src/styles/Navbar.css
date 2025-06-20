@@ -1,6 +1,6 @@
 .animate-button {
   position: relative;
-  cursor: pointer;
+  transition: all ease-in-out 0.2s;
 }
 
 .animate-button::after {
@@ -40,6 +40,7 @@
 .active-link {
   position: relative;
   padding-bottom: 10px;
+  text-shadow: 3px 3px 5px var(--accent);
 }
 
 .active-link::before {

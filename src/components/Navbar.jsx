@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const location = useLocation();
   const [menuExpand, setMenuExpand] = useState(false);
-  const [visitPage, setVisitPage] = useState(false);
+  const [visitPage, setVisitPage] = useState('');
   const Links = [
     { name: "Home", link: "/" },
     { name: "Utter Your Thoughts", link: "/utter-your-thoughts" },
@@ -22,7 +22,9 @@ const Navbar = () => {
   }
   const handleOpen = () => {
     setMenuExpand(!menuExpand);
-    setVisitPage(!visitPage);
+    setTimeout(() => {
+      setVisitPage('');
+    }, 500);
   }
 
   return (
@@ -30,7 +32,7 @@ const Navbar = () => {
       <div className="z-50 hidden top-0 lg:flex items-center justify-between px-[100px] py-2 relative">
         { //Logo
           <Link to={'/'} className=''><div className={`flex items-center space-x-5`}>
-            <div id="logo-div" className="rounded-full p-3 bg-primary">
+            <div id="logo-div" className="rounded-full p-3 bg-primary-500">
               <img
                 src={logo}
                 alt=""
@@ -47,14 +49,14 @@ const Navbar = () => {
               {
                 Links.map((items) => {
                   return (
-                    <li key={items.name} className=''><Link to={items.link} className={`text-[20px] lg:text-2xl font-sans px-[10px] rounded-full font-light ${location.pathname === items.link ? 'active-link' : 'inactive-link'}`}>{items.name}</Link></li>
+                    <li key={items.name} className=''><Link to={items.link} className={`text-[20px] lg:text-xl font-sans px-[10px] rounded-full ${location.pathname === items.link ? 'active-link' : 'inactive-link'}`}>{items.name}</Link></li>
                   )
                 })
               }
             </ul>
           </div>
         }
-        <Link to={'/contact'} className='animate-button text-2xl rounded-full border-secondary text-secondary border-[1px] px-[2rem] py-[1vh] hover:border-primary hover:text-black'>Contact Us</Link>
+        <Link to={'/contact'} className='animate-button bg-primary-200 text-xl rounded-full text-secondary px-[2rem] py-[1vh] hover:text-black hover:bg-primary-500'>Contact Us</Link>
       </div>
 
 
@@ -62,7 +64,7 @@ const Navbar = () => {
         <div className='lg:hidden flex justify-between items-center px-[20px]'>
           <Link to={'/'} className=''>
             <div className={`flex items-center space-x-9`}>
-              <div id="logo-div" className="rounded-full p-8 bg-primary shadow-lg">
+              <div id="logo-div" className="rounded-full p-8 bg-primary-500 shadow-lg">
                 <img
                   src={logo}
                   alt=""
@@ -76,7 +78,7 @@ const Navbar = () => {
               </span>
             </div>
           </Link>
-          <div className={`menuButton h-[50px] text-5xl w-[50px] bg-primary rounded-[25px] flex flex-col items-center justify-center space-y-3 shadow-lg ${menuExpand ? `active` : `inactive`}`} onClick={handleMenu}>
+          <div className={`menuButton h-[50px] text-5xl w-[50px] bg-primary-500 rounded-[25px] flex flex-col items-center justify-center space-y-[3px] shadow-lg ${menuExpand ? `active` : `inactive`}`} onClick={handleMenu}>
             <div className={`bar1 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>
             <div className={`bar2 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>
             <div className={`bar3 bg-black h-[3px] w-[45%] rounded-full ${menuExpand ? `active` : `inactive`}`}></div>
@@ -85,13 +87,13 @@ const Navbar = () => {
       }
       {
         //Menu-Items
-        <div className={`menuItems absolute lg:hidden bg-accent bg-opacity-5 text-8xl mt-[20px] right-[20px] ${menuExpand ? `translate-y-[0]` : `opacity-0 translate-x-[-100%]`} rounded-[13px] p-[20px] text-right shadow-lg`}>
+        <div className={`menuItems absolute lg:hidden bg-accent bg-opacity-5 text-8xl mt-[20px] right-[20px] ${menuExpand ? `translate-y-[0]` : `opacity-0 translate-x-[-160%]`} rounded-[13px] p-[20px] text-right shadow-lg ${visitPage}`}>
           <ul className='space-y-9'>
             {
               Links.map((item, index) => {
                 return (
                   <li key={item.name} className={`py-[8px] px-[12px] rounded-full`} onClick={handleOpen}>
-                    <Link to={item.link} className={`text-[20px] font-sans px-[12px] rounded-full font-light ${location.pathname === item.link ? 'active-link' : 'inactive-link'}`}>{item.name}</Link>
+                    <Link to={item.link} className={`text-[20px] font-sans px-[12px] rounded-full  ${location.pathname === item.link ? 'active-link' : 'inactive-link'}`}>{item.name}</Link>
                   </li>
                 )
               })

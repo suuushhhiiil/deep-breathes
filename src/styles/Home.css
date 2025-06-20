@@ -6,11 +6,11 @@
   content: "";
   background-color: var(--primary);
   position: absolute;
-  top: -40px;
+  top: -30px;
   z-index: -1;
   border-radius: 400px;
-  height: 40vh;
-  width: 40vh;
+  height: 45vh;
+  width: 45vh;
   transition: 0.8s;
   animation: rise-up 16000ms ease infinite;
 }
