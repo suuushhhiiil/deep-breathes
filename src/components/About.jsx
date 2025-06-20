@@ -49,10 +49,9 @@ const About = () => {
                 y: 0,
                 scrollTrigger: {
                     trigger: aboutUs,
-                    start: "top 30%",
+                    start: "top 50%",
                     end: "top 10%",
                     toggleActions: "play play play reverse",
-                    markers: true,
                 },
             }
         );
@@ -60,10 +59,9 @@ const About = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "top 25%",
+                start: "top 35%",
                 end: "top top",
                 toggleActions: "play play play reverse",
-                markers: true,
             }
         });
 
@@ -83,8 +81,8 @@ const About = () => {
             "-=0.3"
         );
         tl.fromTo(aboutUsImage,
-            { y: 0, opacity: 0, scale: 1.08 },
-            { y: 0, opacity: 1, scale: 1, },
+            { y: 150, opacity: 0, },
+            { y: 0, opacity: 1 },
             "-=0.4"
         );
     });
