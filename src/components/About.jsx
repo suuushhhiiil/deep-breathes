@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import "../styles/About.css";
 import aboutUsImg from "../assets/hero-background.jpg";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { duration } from '@mui/material';
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +28,7 @@ const About = () => {
             opacity: 0.6,
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "45% top",
+                start: "50% top",
                 end: "top -150%",
                 scrub: 0.5,
             },
@@ -92,7 +91,7 @@ const About = () => {
         }
     }, [])
     return (
-        <div className="aboutUs sticky lg:flex justify-center top-0 lg:mt-0 mt-[40px] h-[180vh] lg:px-[12rem] px-[20px] pt-[17.1vh]" ref={aboutUsRef}>
+        <div className="aboutUs sticky lg:flex justify-center top-0 lg:mt-0 mt-[40px] h-[200vh] lg:px-[12rem] px-[20px] pt-[17.1vh]" ref={aboutUsRef}>
             <div className=" bg-primary-200 lg:p-[2.5rem] p-[20px] rounded-[18px] h-fit" ref={aboutUsBoxRef}>
                 <div className="content w-fit justify-between lg:flex">
                     <div className='lg:mt-0 mt-[40px]'>
