@@ -19,34 +19,35 @@ const Offerings = () => {
     const cardContainer = offeringCardContainerRef.current;
     const heading = offeringHeadingRef.current;
     gsap.fromTo(
-      container,
+      heading,
       {
-        transform: "perspective(1500px) rotateX(-55deg)",
+        x: -1000,
+        opacity: 0,
       },
       {
-        transform: "perspective(1500px) rotateX(0deg)",
-        scale: 1,
+        x: 0,
+        opacity: 1,
         scrollTrigger: {
           trigger: container,
-          start: "top 100%",
-          end: "top 40%",
+          start: "20% 20%",
+          end: "top top",
           scrub: 1,
-          markers: true,
+          // markers: true,
         }
       }
     );
-    gsap.to(heading,
-      {
-        transform: "translateX(-150%)",
-        fontSize: '30px',
-        scrollTrigger: {
-          trigger: cardContainer,
-          start: 'top bottom',
-          end: 'top 60%',
-          scrub: 1,
-        }
-      }
-    )
+
+    // gsap.to(heading,
+    //   {
+    //     transform: "translateX(-120%)",
+    //     fontSize: '50px',
+    //     scrollTrigger: {
+    //       trigger: cardContainer,
+    //       start: 'top bottom',
+    //       end: 'top 60%',
+    //       scrub: 1,
+    //     }
+    //   });
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -56,17 +57,19 @@ const Offerings = () => {
   return (
     <>
       <div className='offering sticky flex justify-center top-[15vh] pt-[8vh] mt-[3px] pb-[30vh] font-sans h-[100vh] bg-blak rounded-[20px]' ref={offeringContainerRef}>
-        <div className='font-display text-6xl font-bold text-whie' ref={offeringHeadingRef}>
+        <div className='font-display text-6xl'>
+        <h1 ref={offeringHeadingRef}>
           What We Offer?
+        </h1>
         </div>
       </div>
-      <div className='text-white flex justify-center items-center font-sans'>
-        <div className='relative' ref={offeringCardContainerRef}>
+      <div className='relative text-white flex items-center font-sans'>
+        <div className='' ref={offeringCardContainerRef}>
           {
             features.map((feature, index) => (
               <div
                 ref={offeringElementsRef}
-                className='sticky top-[38vh] h-[800px] px-[50px] py-[40px] rounded-[20px] my-5 w-[500px]'
+                className='sticky top-[38vh] h-[800px] px-[50px] py-[40px] rounded-[20px] my-5 w-[500px] ml-[20px]'
                 key={index}
                 style={{ backgroundImage: `url(${feature.image})`, backgroundPosition: `center`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}
               >

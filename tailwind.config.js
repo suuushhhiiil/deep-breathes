@@ -23,8 +23,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ["Sansita Swashed"],
-      sans: ["Funnel Display"],
+      display: ["Inter", "sans-serif"],
+      sans: ["Funnel Display", "sans-serif"],
     },
     transitionPropery: {
       width: "width",

@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { features } from "../utils/Sources";
 import "../styles/Features.css"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import cardImage from "../assets/card-background.jpg";
+import cardImage from "../assets/calm-women.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,13 +14,11 @@ const Features = () => {
   const frontElRefs = useRef([]);
   const backElRefs = useRef([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const cards = cardRefs.current;
     const frontEls = frontElRefs.current;
     const backEls = backElRefs.current;
     const featuresEl = featuresRef.current;
-
-    if (!featuresEl || cards.length === 0 || frontEls.length === 0 || backEls.length === 0) return;
 
     const totalScrollHeight = window.innerHeight * 3;
     const positions = [10, 30, 50, 70];
@@ -29,26 +27,27 @@ const Features = () => {
     // Store references to triggers so we can kill them later
 
     // Pin cards
-
-        ScrollTrigger.create({
-        trigger: featuresEl,
-        start: "top top",
-        end: `+=${totalScrollHeight}`,
-        pin: true,
-        pinSpacing: true,
-      });
+    ScrollTrigger.create({
+      trigger: featuresEl,
+      start: "top top",
+      end: `+=${totalScrollHeight}`,
+      scrub: 1,
+      pin: true,
+      onLeave: () => ScrollTrigger.refresh(),
+      onLeaveBack: () => ScrollTrigger.refresh()
+    });
 
     // Spread cards
     cards.forEach((card, index) => {
       gsap.to(card, {
         left: `${positions[index]}%`,
-        rotate: `${rotations[index]}`,
+        // rotate: `${rotations[index]}`,
         ease: "none",
         scrollTrigger: {
           trigger: featuresEl,
           start: "top top",
-          end: `+=${totalScrollHeight / 3}`,
-          scrub: 0.5,
+          end: `+=${totalScrollHeight/3}`,
+          scrub: true,
           id: `spread-${index}`,
         },
       })
@@ -59,7 +58,8 @@ const Features = () => {
       trigger: featuresEl,
       start: "top top",
       end: `+=${totalScrollHeight}`,
-      scrub: 1,
+      scrub: true,
+      markers: true,
       onUpdate: (self) => {
         const progress = self.progress;
         cards.forEach((card, index) => {
@@ -74,11 +74,18 @@ const Features = () => {
 
             gsap.to(frontEls[index], { rotateY: frontRotation, ease: "power1.out" });
             gsap.to(backEls[index], { rotateY: backRotation, ease: "power1.out" });
-            gsap.to(card, { rotateZ: cardRotation, ease: "power1.out" });
+            //gsap.to(card, { rotateZ: cardRotation, ease: "power1.out" });
           }
         });
       },
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        trigger.kill();
+
+      });
+    }
   }, []);
   return (
     <div
@@ -86,7 +93,7 @@ const Features = () => {
       className="bg-primary font-sans sticky top-0 pt-[18vh] features flex flex-col items-center mt-[3px] h-[150vh]"
     >
       <div className="featuresHeading flex items-center justify-center">
-        <h1 className="text-black text-center font-display font-semibold text-[4rem]">
+        <h1 className="text-black text-center font-display font-semibold lg:text-6xl text-[60px]">
           What We Offer?
         </h1>
       </div>
@@ -95,7 +102,7 @@ const Features = () => {
         <div
           ref={(el) => (cardRefs.current[index] = el)}
           key={feature.id}
-          className="card relative  min-w-[19vw] h-[400px]"
+          className="card relative  min-w-[300px] h-[400px]"
           id={`card-${index + 1}`}
         >
           <div className="card-wrapper">

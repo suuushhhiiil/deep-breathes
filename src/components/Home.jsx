@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import "../styles/About.css";
 import About from "./About";
 import Testimonials from "./Testimonials";
+import Offerings from "./Offerings";
+import Features from "./Features";
 
 const Home = () => {
   const buttonStyle = `transition-all duration-400 font-sans rounded-full lg:px-8 px-[15px] lg:py-2 py-[8px] font-medium`;
@@ -16,7 +18,7 @@ const Home = () => {
           <div className="lg:flex">
             <div className="flex flex-col lg:mr-[80px] space-y-2 lg:w-[50rem]">
               <h1 id="heading" className={`heroHeading font-display font-bold lg:text-[4.8rem] text-[60px] leading-[0.9] text-black`}>
-                Pause Breathe Heal.
+                Pause. Breathe. Heal.
               </h1>
               <p className={`font-sans font-light lg:text-[1.6rem] text-[18px] pt-[10px]`}>
                 Your safe space for mental wellness, growth, and balance.
@@ -37,6 +39,8 @@ const Home = () => {
         </div>
       </div>
       <About />
+      <Features />
+      <Offerings />
       <Testimonials />
     </>
   );

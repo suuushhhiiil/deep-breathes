@@ -10,7 +10,7 @@ import UtterYourThoughts from "./components/UtterYourThoughts";
 const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.9,
+      duration: 2,
     });
     let animationFrameId;
     const raf = (time) => {

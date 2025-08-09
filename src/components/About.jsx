@@ -23,13 +23,12 @@ const About = () => {
         let aboutUsImage = aboutUsImageRef.current;
 
         gsap.to(aboutUs, {
-            transform: 'perspective(1500px) rotateX(30deg) translateY(-40%)',
-            scale: 0.8,
-            opacity: 0.6,
+            transform: 'perspective(1500px) translateX(40%)',
+            opacity: 0,
             scrollTrigger: {
                 trigger: aboutUs,
                 start: "50% top",
-                end: "top -150%",
+                end: "90% top",
                 scrub: 0.5,
             },
         });
@@ -37,19 +36,19 @@ const About = () => {
         
         gsap.fromTo(aboutUsBox,
             {
-                scale: 1.5,
-                opacity: 0,
-                y: 60
-                
+                scale: 0.6,
+                y: 100,
+                opacity: 0               
             },
             {
-                scale: 1,
                 opacity: 1,
+                scale: 1,
                 y: 0,
+                ease: "power2.out",
                 scrollTrigger: {
                     trigger: aboutUs,
-                    start: "top 50%",
-                    end: "top 10%",
+                    start: "top 40%",
+                    // markers: true,
                     toggleActions: "play play play reverse",
                 },
             }
@@ -58,8 +57,8 @@ const About = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: aboutUs,
-                start: "top 35%",
-                end: "top top",
+                start: "top 20%",
+                // markers: true,
                 toggleActions: "play play play reverse",
             }
         });
@@ -82,7 +81,7 @@ const About = () => {
         tl.fromTo(aboutUsImage,
             { y: 150, opacity: 0, },
             { y: 0, opacity: 1 },
-            "-=0.4"
+            "-=0.3"
         );
     });
     useEffect(() => {
@@ -92,20 +91,20 @@ const About = () => {
     }, [])
     return (
         <div className="aboutUs sticky lg:flex justify-center top-0 lg:mt-0 mt-[40px] h-[200vh] lg:px-[12rem] px-[20px] pt-[17.1vh]" ref={aboutUsRef}>
-            <div className=" bg-primary-200 lg:p-[2.5rem] p-[20px] rounded-[18px] h-fit" ref={aboutUsBoxRef}>
+            <div className=" bg-primary-200 lg:p-[2rem] p-[20px] rounded-[18px] h-fit" ref={aboutUsBoxRef}>
                 <div className="content w-fit justify-between lg:flex">
                     <div className='lg:mt-0 mt-[40px]'>
-                        <p className="aboutUsWelcome font-sans lg:text-md text-[20px] text-secondary" ref={aboutUsWelcomeRef}>Welcome to Deep Breathes</p>
-                        <h1 className="aboutUsHeading font-display font-semibold lg:text-[4rem] text-[60px] leading-[1] lg:flex-shrink-0 lg:w-[25rem]" ref={aboutUsHeadingRef}>Who We Are?</h1>
+                        <p className="font-sans lg:text-md text-[20px] text-secondary" ref={aboutUsWelcomeRef}>Welcome to Deep Breathes</p>
+                        <h1 className="font-display font-semibold lg:text-6xl text-[60px] leading-[1] mt-3 lg:flex-shrink-0 lg:w-[25rem]" ref={aboutUsHeadingRef}>Who We Are?</h1>
                     </div>
                     <div className="font-sans lg:ml-[40px] lg:text-justify lg:w-[47vw] lg:mt-0 mt-[30px]">
-                        <p className="aboutUsContent lg:text-lg text-[18px]" ref={aboutUsContentRef}>
+                        <p className="lg:text-lg text-[18px] font-light lg:leading-[1.3] tracking-tight" ref={aboutUsContentRef}>
                             Deep Breathes is a supportive platform for students and young
                             adults, making mental wellness approachable and actionable.
                             <br />
-                            "We’re committed to creating a safe space where everyone feels
+                            We’re committed to creating a safe space where everyone feels
                             heard, supported, and empowered to prioritize their mental
-                            well-being."
+                            well-being.
                         </p>
                     </div>
                 </div>
