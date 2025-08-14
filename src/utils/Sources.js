@@ -16,30 +16,30 @@ import professionalSupport from '../assets/professional-support.jpg';
 export const features = [
   {
     id: 0,
-    title: "Mental Health Tips",
+    title: "Tips",
     description:
-    "Explore quick and easy-to-follow tips to handle everyday stress, build resilience, and improve your mental well-being.",
+    "Explore quick tips to manage stress, build resilience, and boost mental well-being.",
     image: mentalHealthTips
   },
   {
       id: 1,
-      title: "Guided Exercises",
+      title: "Exercises",
       description:
-      "Follow step-by-step breathing techniques, mindfulness activities, and relaxation exercises tailored to your busy schedule.",
+      "Follow simple breathing, mindfulness, and relaxation exercises for your busy schedule.",
       image: guidedExercises
     },
     {
       id: 2,
-      title: "Stories That Inspire",
+      title: "Stories",
       description:
-      "Real-life experiences from students and young adults who’ve faced mental health challenges and emerged stronger. Discover hope and strength through shared journeys.",
+      "Real stories of young adults overcoming mental health challenges, offering hope and strength.",
       image: storiesThatInspire
     },
     {
       id: 3,
-      title: "Professional Support",
+      title: "Support",
       description:
-      "Access a network of trusted counselors and therapists ready to help you navigate difficult times. We’ve vetted professionals who understand the unique challenges faced by young adults.",
+      "Connect with vetted counselors and therapists who understand young adults' challenges.",
       image: professionalSupport
     },
   ];

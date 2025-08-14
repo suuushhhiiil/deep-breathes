@@ -61,7 +61,7 @@ const Navbar = () => {
 
 
       { //Mobile-Nav-Bar
-        <div className='lg:hidden flex justify-between items-center px-[20px]'>
+        <div className='lg:hidden flex justify-between items-center px-[30px] py-[20px]'>
           <Link to={'/'} className=''>
             <div className={`flex items-center space-x-9`}>
               <div id="logo-div" className="rounded-full p-8 bg-primary-500 shadow-lg">

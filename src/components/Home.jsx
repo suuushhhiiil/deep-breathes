@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="lg:mt-[8vh] mt-[30px]">
-        <div className={`relative px-[20px] lg:px-[100px] h-[87vh] lg:flex justify-center items-center`}>
+        <div className={`relative px-[40px] lg:px-[100px] h-[87vh] lg:flex justify-center items-center`}>
           <div className="lg:flex">
             <div className="flex flex-col lg:mr-[80px] space-y-2 lg:w-[50rem]">
               <h1 id="heading" className={`heroHeading font-display font-bold lg:text-[4.8rem] text-[60px] leading-[0.9] text-black`}>
@@ -40,7 +40,6 @@ const Home = () => {
       </div>
       <About />
       <Features />
-      <Offerings />
       <Testimonials />
     </>
   );

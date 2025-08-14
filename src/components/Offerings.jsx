@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 import "../styles/Offerings.css"; import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { features } from '../utils/Sources';
@@ -12,7 +12,7 @@ const Offerings = () => {
   const offeringCardContainerRef = useRef(null);
   const offeringElementsRef = useRef([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const totalScrollHeight = window.innerHeight * 3;
     const elements = offeringElementsRef.current;
     const container = offeringContainerRef.current;

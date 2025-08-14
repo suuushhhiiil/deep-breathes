@@ -23,8 +23,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ["Inter", "sans-serif"],
-      sans: ["Funnel Display", "sans-serif"],
+      display: ["Playfair Display", "sans-serif"],
+      sans: ["DM Sans", "sans-serif"],
     },
     transitionPropery: {
       width: "width",

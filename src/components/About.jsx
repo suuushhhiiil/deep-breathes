@@ -90,15 +90,15 @@ const About = () => {
         }
     }, [])
     return (
-        <div className="aboutUs sticky lg:flex justify-center top-0 lg:mt-0 mt-[40px] h-[200vh] lg:px-[12rem] px-[20px] pt-[17.1vh]" ref={aboutUsRef}>
+        <div className="aboutUs sticky lg:flex justify-center top-0 lg:mt-0 mt-[40px] h-[200vh] lg:px-[12rem] px-[30px] pt-[17.1vh]" ref={aboutUsRef}>
             <div className=" bg-primary-200 lg:p-[2rem] p-[20px] rounded-[18px] h-fit" ref={aboutUsBoxRef}>
-                <div className="content w-fit justify-between lg:flex">
+                <div className="content lg:flex justify-between items-center">
                     <div className='lg:mt-0 mt-[40px]'>
                         <p className="font-sans lg:text-md text-[20px] text-secondary" ref={aboutUsWelcomeRef}>Welcome to Deep Breathes</p>
                         <h1 className="font-display font-semibold lg:text-6xl text-[60px] leading-[1] mt-3 lg:flex-shrink-0 lg:w-[25rem]" ref={aboutUsHeadingRef}>Who We Are?</h1>
                     </div>
-                    <div className="font-sans lg:ml-[40px] lg:text-justify lg:w-[47vw] lg:mt-0 mt-[30px]">
-                        <p className="lg:text-lg text-[18px] font-light lg:leading-[1.3] tracking-tight" ref={aboutUsContentRef}>
+                    <div className="font-sans lg:text-justify lg:w-[42vw] lg:mt-0 mt-[30px]">
+                        <p className="lg:text-xl text-[18px] font-light lg:leading-[1.3] tracking-tight" ref={aboutUsContentRef}>
                             Deep Breathes is a supportive platform for students and young
                             adults, making mental wellness approachable and actionable.
                             <br />
