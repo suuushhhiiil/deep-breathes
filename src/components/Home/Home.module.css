@@ -83,8 +83,8 @@ div {
 }
 
 .featuresScroll {
-  grid-column: 1 / 7;
-  grid-row: -3/-2;
+  grid-column: 1 / -1;
+  grid-row: -4/-3;
 }
 
 .featuresCards {
@@ -146,9 +146,8 @@ div {
   }
 
   .featuresScroll {
-    justify-content: center;
     grid-column: 1/-1;
-    grid-row: 9/10;
+    grid-row: 10/-1;
   }
 
   .featuresCards {

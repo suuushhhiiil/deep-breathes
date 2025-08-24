@@ -104,15 +104,15 @@ const Home = () => {
             supported, and empowered to prioritize their mental well-being.
           </p>
           <div
-            className={`${styles.featuresScroll} flex items-center lg:gap-5 gap-3.5  px-button- py-button-y rounded-4xl`}
+            className={`${styles.featuresScroll} lg:gap-5 gap-3.5 flex flex-col items-center px-button- py-button-y rounded-4xl`}
           >
             <h1
-              className={`text-center text-h2 font-medium font-sans leading-[1.1]`}
+              className={`text-h2 font-medium font-sans leading-[1.1]`}
             >
               Scroll <span className={`font-thin`}>to Explore</span>
             </h1>
             <div
-              className={`lg:-rotate-90 bg-background-surface py-button-y rounded-full`}
+              className={`lg:-rotate-90 w-fit bg-background-surface  py-button-y rounded-full`}
             >
               <MoveUp size={30} />
             </div>
