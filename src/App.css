@@ -47,7 +47,7 @@ html {
   --text-menu-items: clamp(1.5rem, 1.25rem + 0.2vw, 2rem);
   --text-button: clamp(1rem, 0.7rem + 0.5vw, 1.325rem);
   --text-content: clamp(1rem, 1rem + 0.5vw, 1.3rem);
-  --text-h1: clamp(5rem, 4rem + 1.2vw, 6rem);
+  --text-h1: clamp(3.8rem, 3.5rem + 1.2vw, 5rem);
   --text-h2: clamp(2.5rem, 2.5rem + 1.2vw, 3rem);
   --text-h3: clamp(1.5rem, 1.5rem + 1.5vw, 3rem);
   --text-h4: clamp(1rem, 1.5rem + 1.5vw, 2rem);
