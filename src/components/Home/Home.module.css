@@ -1,0 +1,173 @@
+div {
+  transition: all 500ms ease-in-out;
+}
+
+.heroSection {
+  clipp-path: circle(10% at 50% 50%);
+  will-change: clip-path;
+  animation: hero-rpeveal 3000ms ease-in-out 500ms forwards;
+}
+
+@keyframes hero-reveal {
+  0% {
+    clip-path: circle(10% at 50% 50%);
+    background-size: cover/10%;
+  }
+  30% {
+    clip-path: circle(8% at 50% 50%);
+  }
+  50% {
+    clip-path: circle(12% at 50% 50%);
+  }
+  75% {
+    clip-path: circle(8% at 50% 50%);
+  }
+
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-rows: repeat(12, 7vh);
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+}
+
+.heroHeaderText {
+  grid-column: 1/-1;
+  grid-row: 3 / 6;
+}
+
+.heroImage {
+  grid-column: 1/-1;
+  grid-row: 5/-1;
+}
+
+.headerRightMenu {
+  transform-origin: 50% 100%;
+  position: absolute;
+  right: 0;
+  top: calc(var(--padding-base-y) + 2rem);
+  transition: all 500ms ease-in-out;
+}
+
+.aboutHeaderText {
+  grid-column: 1/-1;
+  grid-row: 3 / 5;
+}
+
+.aboutContentText {
+  grid-column: 7/-1;
+  grid-row: 5 / 11;
+}
+
+.aboutUsMedia {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 50%, 45% 50%, 45% 100%, 0% 100%);
+}
+
+.featuresHeaderText {
+  grid-column: 1 / 8;
+  grid-row: 4 / 6;
+}
+
+.featuresContentText {
+  grid-column: 1 / 7;
+  grid-row: 7 / 10;
+}
+
+.featuresScroll {
+  grid-column: 1 / 7;
+  grid-row: -3/-2;
+}
+
+.featuresCards {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(65% at 150% 50%);
+  will-change: clip-path;
+}
+
+.featuresTitle {
+  grid-column: 1/8;
+  grid-row: 4/8;
+}
+
+.featuresDescription {
+  grid-column: 8/-1;
+  grid-row: 8 / -1;
+}
+
+@media (max-width: 767px) {
+  .contentWrapper {
+    display: grid;
+    grid-template-rows: repeat(12, 7vh);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+  }
+
+  .heroHeaderText {
+    grid-column: 1/-1;
+    grid-row: 3 / 6;
+  }
+
+  .aboutHeaderText {
+    grid-column: 1/-1;
+    grid-row: 2 / 5;
+  }
+
+  .aboutContentText {
+    grid-column: 1 / -1;
+    grid-row: 5 / 8;
+  }
+
+  .aboutUsMedia {
+    grid-column: 1 / -1;
+    grid-row: 8 / -1;
+  }
+
+  .featuresHeaderText {
+    grid-column: 1/-1;
+    grid-row: 3 / 6;
+  }
+
+  .featuresContentText {
+    grid-column: 1/-1;
+    grid-row: 6 / 8;
+  }
+
+  .featuresScroll {
+    justify-content: center;
+    grid-column: 1/-1;
+    grid-row: 9/10;
+  }
+
+  .featuresCards {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(70% at 50% 150%);
+    will-change: clip-path;
+  }
+
+  .featuresTitle {
+    grid-column: 1/-1;
+    grid-row: 2/7;
+  }
+
+  .featuresDescription {
+    grid-column: 1/-1;
+    grid-row: 7 / 10;
+  }
+}

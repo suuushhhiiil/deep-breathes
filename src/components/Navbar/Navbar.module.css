@@ -1,0 +1,11 @@
+.headerRightMenu {
+  transform-origin: 50% 100%;
+  position: absolute;
+  right: var(--padding-base-x);
+  top: calc(var(--padding-base-y) + 4.5rem);
+  transition: all 500ms ease-in-out;
+}
+
+div {
+  transition: all 500ms ease-in-out;
+}

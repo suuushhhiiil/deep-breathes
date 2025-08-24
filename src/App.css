@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@import "tailwindcss";
+
+html {
+  font-size: 16px;
+}
+
+@theme {
+  /* Colors */
+  /* -- BACKGROUNDS -- */
+  --color-background-primary: #f8f9fa;
+  --color-background-surface: #dee2e6;
+
+  /* -- TEXT -- */
+  --color-primary-text: #14161d;
+  --color-secondary-text: #6c757d;
+  --color-text-muted: #777c8f;
+  --text-on-accent: #000000;
+
+  /* -- BRAND / ACCENT -- */
+  --color-accent-primary: #006aff;
+  --color-accent-primary-hover: #8066ff;
+  --color-accent-primary-active: #5533ff;
+
+  /* -- UI STATES -- */
+  --state-success: #26b35d;
+  --state-warning: #fabb2d;
+  --state-error: #ff4d4d;
+  --state-info: #4da6ff;
+
+  /* -- BORDERS & DIVIDERS -- */
+  --border-primary: #363b4a;
+  --border-secondary: #2b2f3d;
+
+  /* Fonts */
+  --font-display: "Inter";
+  --font-sans: "DM Sans";
+
+  /* Transitions */
+
+  /* Sizing */
+
+  --breakpoint-lg: 48rem;
+
+  --text-logo: clamp(1.5rem, 1.5rem + 0.2vw, 3rem);
+  --text-menu-items: clamp(1.5rem, 1.25rem + 0.2vw, 2rem);
+  --text-button: clamp(1rem, 0.7rem + 0.5vw, 1.325rem);
+  --text-content: clamp(1rem, 1rem + 0.5vw, 1.3rem);
+  --text-h1: clamp(5rem, 4rem + 1.2vw, 6rem);
+  --text-h2: clamp(2.5rem, 2.5rem + 1.2vw, 3rem);
+  --text-h3: clamp(1.5rem, 1.5rem + 1.5vw, 3rem);
+  --text-h4: clamp(1rem, 1.5rem + 1.5vw, 2rem);
+
+  --padding-button-x: 1rem;
+  --padding-button-y: 0.5rem;
+  --padding-base-x: 6vw;
+  --padding-base-y: 5vh;
+  --padding-menu-x: 5vw;
+  --padding-menu-y: 2.5vh;
+  --padding-body-y: clamp(0.5rem, 0.45rem + 1vh, 1.25rem);  
+}
+
+:root {
+  --grid-gap: 0.3vh;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-background-primary);
+}
+
+.dark-theme {
+  /* Colors */
+  /* -- BACKGROUNDS -- */
+  --color-background-primary: #14161d;
+  --color-background-surface: #1d2029;
+
+  /* -- TEXT -- */
+  --color-primary-text: #ffffff;
+  --color-secondary-text: #6c757d;
+  --color-text-muted: #777c8f;
+  --text-on-accent: #ffffff;
+
+  /* -- BRAND / ACCENT -- */
+  --color-accent-primary: #006aff;
+  --color-accent-primary-hover: #8066ff;
+  --color-accent-primary-active: #5533ff;
+
+  /* -- UI STATES -- */
+  --state-success: #26b35d;
+  --state-warning: #fabb2d;
+  --state-error: #ff4d4d;
+  --state-info: #4da6ff;
+
+  /* -- BORDERS & DIVIDERS -- */
+  --border-primary: #363b4a;
+  --border-secondary: #2b2f3d;
+}
